@@ -22,6 +22,10 @@ public class Projectile : MonoBehaviour
     {
         this.direction = projectile.direction;
         this.damage = projectile.damage;
+        this.speed = projectile.speed;
+        this.lifetime = projectile.lifetime;
+        this.effectTag = projectile.effectTag;
+        this.collisionTag = projectile.collisionTag;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +34,7 @@ public class Projectile : MonoBehaviour
         {
             // Gestionar explosión desde el PoolingManager
             GameObject effect = PoolingManagerByQueue.Instance.SpawnFromPool(effectTag, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }
