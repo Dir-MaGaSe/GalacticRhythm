@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PoolingManagerByQueue : MonoBehaviour
 {
-    public static PoolingManagerByQueue Instance;
-    
     private Dictionary<string, Queue<GameObject>> poolDictionary;
+    public static PoolingManagerByQueue Instance;
+    public Transform parentObject;
 
     [System.Serializable]
     public class Pool
@@ -20,6 +20,7 @@ public class PoolingManagerByQueue : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools)
@@ -30,6 +31,7 @@ public class PoolingManagerByQueue : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
+                obj.transform.SetParent(transform);
                 objectPool.Enqueue(obj);
             }
 

@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class PoolingManagerByList : MonoBehaviour
 {
-    /**/
     private Dictionary<string, List<GameObject>> poolDictionary = new Dictionary<string, List<GameObject>>();
     public static PoolingManagerByList Instance;
 
+    public Transform parentObject;
     void Awake()
     {
         Instance = this;
+        if (parentObject == null)
+        {
+            parentObject = this.transform;
+        }
     }
 
-    public void InitializePools(ObjectPoolData poolData)
+    public void InitializePools(ObjectsPoolData poolData)
     {
         foreach (var item in poolData.poolItems)
         {
@@ -38,13 +42,14 @@ public class PoolingManagerByList : MonoBehaviour
             {
                 if (!obj.activeInHierarchy)
                 {
+                    obj.transform.SetParent(parentObject);
                     return obj;
                 }
             }
 
             // Si no hay objetos disponibles, crear uno nuevo (opcional)
             GameObject prefab = poolDictionary[poolKey][0];
-            GameObject newObj = Instantiate(prefab);
+            GameObject newObj = Instantiate(prefab, parentObject);
             newObj.SetActive(false);
             poolDictionary[poolKey].Add(newObj);
             return newObj;

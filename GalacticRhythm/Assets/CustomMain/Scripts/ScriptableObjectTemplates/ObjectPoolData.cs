@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ObjectPoolData", menuName = "Pooling/ObjectPoolData")]
-public class ObjectPoolData : ScriptableObject
+[CreateAssetMenu(fileName = "ObjectsPoolData", menuName = "Pooling/ObjectsPoolData")]
+public class ObjectsPoolData : ScriptableObject
 {
     [System.Serializable]
     public class PoolItem

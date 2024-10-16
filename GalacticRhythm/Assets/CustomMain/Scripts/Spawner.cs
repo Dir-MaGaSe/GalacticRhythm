@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public float spawnInterval = 2f;
     public int maxObjectsOnScreen = 5;
 
-    public ObjectPoolData objectPoolData; // Referencia al ScriptableObject
+    public ObjectsPoolData objectPoolData; // Referencia al ScriptableObject
 
     private int currentObjectsOnScreen = 0;
 
@@ -42,13 +42,15 @@ public class Spawner : MonoBehaviour
         Vector2 newPosition = new Vector2(randomX, transform.position.y);
 
         GameObject obj = PoolingManagerByList.Instance.GetPooledObject(poolKey);
+        SpawnMove objLifeTime = obj.GetComponent<SpawnMove>();
+
         if (obj != null)
         {
             obj.transform.position = newPosition;
             obj.SetActive(true);
             currentObjectsOnScreen++;
 
-            StartCoroutine(DeactivateAfterTime(obj, 5f));
+            StartCoroutine(DeactivateAfterTime(obj, objLifeTime.GetLifeTime()));
         }
     }
 

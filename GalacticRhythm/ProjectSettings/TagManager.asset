@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2901267789
+    locked: 0
+  - name: Back
+    uniqueID: 1109614561
+    locked: 0
+  - name: Midlee
+    uniqueID: 3610028611
+    locked: 0
+  - name: Front
+    uniqueID: 1801713927
+    locked: 0
+  - name: Overhead
+    uniqueID: 2780767197
+    locked: 0
