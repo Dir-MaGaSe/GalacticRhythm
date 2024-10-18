@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8107bb68323339a488ee78381d363dbf, type: 3}
-  m_Name: Default_ProjectilePoolData
+  m_Name: Default_Player_ProjectilePoolData
   m_EditorClassIdentifier: 
   speed: 1.5
   damage: 5

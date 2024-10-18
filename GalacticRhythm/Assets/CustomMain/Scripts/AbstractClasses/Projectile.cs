@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
-    private string effectTag, collisionTag;
+    protected string effectTag, collisionTag;
     private float damage, speed, lifetime;
     private Vector2 direction;
 
@@ -28,16 +28,7 @@ public class Projectile : MonoBehaviour
         this.collisionTag = projectile.collisionTag;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag(collisionTag))
-        {
-            // Gestionar explosión desde el PoolingManager
-            GameObject effect = PoolingManagerByQueue.Instance.SpawnFromPool(effectTag, transform.position, Quaternion.identity);
-            collision.gameObject.SetActive(false);
-            this.gameObject.SetActive(false);
-        }
-    }
+    public abstract void OnTriggerEnter2D(Collider2D collision);
 
     private IEnumerator DeactivateAfterTime(float time)
     {

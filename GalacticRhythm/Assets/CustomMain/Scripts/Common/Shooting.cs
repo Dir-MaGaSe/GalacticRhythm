@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class PlayerShooting : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     public ProjectilePoolData projectileConfig;
     public Transform firePoint;
     public int numberOfProjectiles = 1;
     public float fireRate = 1f; 
     public string poolTag;
+
     private float nextFireTime;
 
     void Update()
