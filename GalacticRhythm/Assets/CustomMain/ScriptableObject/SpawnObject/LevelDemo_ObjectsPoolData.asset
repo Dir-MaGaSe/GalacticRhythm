@@ -15,7 +15,4 @@ MonoBehaviour:
   poolItems:
   - poolKey: defaultObstacle
     prefab: {fileID: 1393155421381669015, guid: 211f0c4e2e3b4184bb3a262219634528, type: 3}
-    poolSize: 2
-  - poolKey: defaultCollectable_type1
-    prefab: {fileID: 1173316260107234630, guid: e2b45f8ecd6df424c9412b892fc3a882, type: 3}
-    poolSize: 1
+    poolSize: 10

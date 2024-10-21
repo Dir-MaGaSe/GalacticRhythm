@@ -7,11 +7,12 @@ TagManager:
   - Effect/VisualEffect/Explosion
   - Spawn/Collectible
   - Spawn/NotCollectible
+  - playerDefault
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ScreenBounds
   - Water
   - UI
   - 

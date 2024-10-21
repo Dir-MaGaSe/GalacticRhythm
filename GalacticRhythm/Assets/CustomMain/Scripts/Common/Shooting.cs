@@ -4,28 +4,31 @@ public class Shooting : MonoBehaviour
 {
     public ProjectilePoolData projectileConfig;
     public Transform firePoint;
-    public int numberOfProjectiles = 1;
-    public float fireRate = 1f; 
-    public string poolTag;
+    public float fireRate = 0.5f;
 
-    private float nextFireTime;
+    private float nextFireTime = 0f;
 
-    void Update()
+    private void Update()
     {
         if (Time.time >= nextFireTime)
         {
             Shoot();
-            nextFireTime = Time.time + 1f / fireRate;
+            nextFireTime = Time.time + fireRate;
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
-        for (int i = 0; i < numberOfProjectiles; i++)
+        GameObject projectile = PoolingManagerByQueue.Instance.SpawnFromPool(projectileConfig.poolTag, firePoint.position, firePoint.rotation);
+        if (projectile != null)
         {
-            GameObject projectile = PoolingManagerByQueue.Instance.SpawnFromPool(poolTag, firePoint.position, firePoint.rotation);
-            Projectile projScript = projectile.GetComponent<Projectile>();
-            projScript.Initialize(projectileConfig);
+            projectile.GetComponent<Projectile>().config = projectileConfig;
         }
     }
+
+    /*// Permite ajustar la cadencia de disparo dinámicamente
+    public void AdjustFireRate(float multiplier)
+    {
+        fireRate *= multiplier;
+    }*/
 }
