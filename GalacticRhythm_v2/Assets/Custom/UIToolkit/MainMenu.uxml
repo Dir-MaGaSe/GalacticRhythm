@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Custom/UIToolkit/Stylesheet/Custom%20Stylesheet.uss?fileID=7433441132597879392&amp;guid=d58b73eb6b4505f4da59cf3e7803fa19&amp;type=3#Custom Stylesheet" />
+    <ui:VisualElement name="Background" class="background">
+        <ui:VisualElement name="ImageContainer" style="flex-grow: 1; position: relative; background-color: rgba(0, 0, 0, 0); width: 100%; height: 35%;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Custom/Sprites/Spaceship%201%201.png?fileID=2800000&amp;guid=f34f7d02957107047b9b43c013b4fb0f&amp;type=3#Spaceship 1 1&quot;); width: 400px; height: 400px; -unity-text-align: upper-left; align-self: center; justify-content: center; position: absolute; top: auto; align-items: auto; margin-top: 320px; margin-right: 260px; margin-bottom: 200px; margin-left: 260px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ButtonsContainer" style="flex-grow: 1; width: 100%; height: 65%; position: relative; padding-top: 120px; padding-right: 300px; padding-bottom: 450px; padding-left: 300px; align-items: center; justify-content: space-around; align-self: auto;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnPlay" class="button" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnOptions" style="height: 200px; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-image: url(&quot;project://database/Assets/Custom/UI/Button1%20Options.png?fileID=2800000&amp;guid=28b8c806d618a3a4281637535066de82&amp;type=3#Button1 Options&quot;); background-color: rgba(188, 188, 188, 0); width: 500px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnExit" class="button" style="height: 200px; background-image: url(&quot;project://database/Assets/Custom/UI/Button1%20Exit.png?fileID=2800000&amp;guid=4895bb62c5e9fea44af62d5c24b9c11d&amp;type=3#Button1 Exit&quot;); background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); width: 500px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

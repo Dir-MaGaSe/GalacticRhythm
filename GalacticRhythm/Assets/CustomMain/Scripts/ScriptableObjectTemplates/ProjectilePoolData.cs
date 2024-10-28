@@ -4,11 +4,15 @@ using UnityEngine;
 public class ProjectilePoolData : ScriptableObject
 {
     //Configuracion Basica
-    public float speed, damage, lifetime;
+    public int damage;
+    public float speed, lifetime;
     public string poolTag;
     
     //Diferentes tipos de projectiles
-    public enum ProjectileType { Default, Explosive, Laser }
+    public enum ProjectileType { 
+        Default, Explosive, 
+        EnemyDefault 
+        }
     public ProjectileType projectileType = ProjectileType.Default;
 
     //Variables Extras

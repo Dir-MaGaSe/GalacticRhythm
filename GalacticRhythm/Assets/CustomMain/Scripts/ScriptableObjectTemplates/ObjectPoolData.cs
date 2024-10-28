@@ -7,10 +7,10 @@ public class ObjectsPoolData : ScriptableObject
     [System.Serializable]
     public class PoolItem
     {
-        public string poolKey;
-        public GameObject prefab;
-        public int poolSize;
-        // Añade cualquier otro parámetro que puedas necesitar en el futuro
+        public string poolKey;  // Identificador del objeto
+        public GameObject prefab;  // Prefab del objeto
+        public int poolSize;  // Tamaño del pool
+        public float spawnProbability;  // Probabilidad de aparición
     }
 
     public List<PoolItem> poolItems;

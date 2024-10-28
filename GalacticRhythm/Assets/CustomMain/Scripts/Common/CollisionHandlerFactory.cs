@@ -6,6 +6,8 @@ public static class CollisionHandlerFactory
     {
         switch (projectileType)
         {
+            case ProjectilePoolData.ProjectileType.EnemyDefault:
+                return new EnemyDefaultCollisionHandler();
             case ProjectilePoolData.ProjectileType.Explosive:
                 return new ExplosiveCollisionHandler();
             default:
