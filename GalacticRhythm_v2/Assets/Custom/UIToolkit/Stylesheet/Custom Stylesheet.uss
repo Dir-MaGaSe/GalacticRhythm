@@ -23,10 +23,13 @@
     -unity-text-align: middle-center;
     color: rgb(255, 255, 255);
     position: absolute;
-    font-size: 150px;
+    font-size: 175px;
     top: 205px;
     -unity-font: url("project://database/Assets/Custom/UI/Fonts/UpheavalPro.ttf?fileID=12800000&guid=c85fe93e6fb0ecd499db97aa4809d1bf&type=3#UpheavalPro");
     -unity-font-definition: initial;
+    -unity-font-style: normal;
+    letter-spacing: 10px;
+    -unity-paragraph-spacing: 5px;
 }
 
 .button-music {

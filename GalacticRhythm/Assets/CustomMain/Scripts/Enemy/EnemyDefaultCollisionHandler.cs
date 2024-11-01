@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDefaultCollisionHandler : ICollisionHandler
 {
     public void HandleCollision(Collider2D collision, ProjectilePoolData config)
     {
-        // Lógica de colisión para proyectiles por defecto
+        // Lógica de colisión para proyectiles enemigos por defecto
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("La bala enemiga impacto con el jugador");

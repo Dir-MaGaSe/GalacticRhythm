@@ -12,7 +12,8 @@ public class Projectile : MonoBehaviour
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * config.speed;
+        if (this.gameObject.tag == "Projectile/Player") { rb.velocity = transform.up * config.speed; }
+        if (this.gameObject.tag == "Projectile/Enemy") { rb.velocity = (transform.up * -1) * config.speed; }
         StartCoroutine(DeactivateAfterTime());
     }
 

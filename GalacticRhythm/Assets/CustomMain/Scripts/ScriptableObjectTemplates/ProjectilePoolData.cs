@@ -10,8 +10,8 @@ public class ProjectilePoolData : ScriptableObject
     
     //Diferentes tipos de projectiles
     public enum ProjectileType { 
-        Default, Explosive, 
-        EnemyDefault 
+        Default, Explosive, //Player
+        EnemyDefault //Enemies
         }
     public ProjectileType projectileType = ProjectileType.Default;
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,13 +11,13 @@ public class ChangeScene : MonoBehaviour
 
     void Start()
     {
-        // Obtén el panel raíz de la UI
+        // Obtï¿½n el panel raï¿½z de la UI
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        // Encuentra el botón usando el nombre de su ID o clase
-        btnStart = root.Q<Button>("btnStart");  // Reemplaza con el ID de tu botón en UI Builder
+        // Encuentra el botï¿½n usando el nombre de su ID o clase
+        btnStart = root.Q<Button>("btnStart");  // Reemplaza con el ID de tu botï¿½n en UI Builder
 
-        // Añade un evento al hacer clic en el botón
+        // Aï¿½ade un evento al hacer clic en el botï¿½n
         btnStart.clicked += OnButtonClick;
     }
 
