@@ -1,8 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Custom/UIToolkit/Stylesheet/Custom%20Stylesheet.uss?fileID=7433441132597879392&amp;guid=d58b73eb6b4505f4da59cf3e7803fa19&amp;type=3#Custom Stylesheet" />
-    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Custom/UI/Background.png?fileID=21300000&amp;guid=3d8914830c62c014b9ab33e5ec720b63&amp;type=3#Background&quot;); width: 100%; height: 100%; -unity-background-scale-mode: scale-and-crop; -unity-slice-left: 0; -unity-slice-bottom: 1; -unity-slice-top: 1; -unity-slice-right: 1;" />
-    <ui:VisualElement name="Container" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; height: 100%; align-self: center; align-items: center; opacity: 1; display: flex; visibility: visible;">
-        <ui:Label tabindex="-1" text="Galactic&#10;Rhythm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txtTitle" class="heading" />
-        <ui:Button text="Tap To Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnStart" style="width: 100%; height: 20%; background-color: rgba(188, 188, 188, 0); color: rgb(255, 255, 255); font-size: 120px; -unity-text-align: middle-center; -unity-font: url(&quot;project://database/Assets/Custom/UI/Fonts/Agdasima-Regular.ttf?fileID=12800000&amp;guid=840b2655d67d9c449bf28a480a2c00af&amp;type=3#Agdasima-Regular&quot;); position: absolute; top: 1030px; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); -unity-font-definition: initial;" />
+    <Style src="project://database/Assets/TitleUI.uss?fileID=7433441132597879392&amp;guid=e9b8a488dc41f834f8ac44e336e9f4c0&amp;type=3#TitleUI" />
+    <ui:VisualElement name="Background" class="background" style="flex-grow: 1;" />
+    <ui:VisualElement name="Container" class="container" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Galactic&#10;Rhythm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txtTitle" class="txtTitle" />
+        <ui:Button text="Tap To Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnStart" class="btnStart" />
+        <ui:Label tabindex="-1" text="Galactic Rhythm | Blue Haze" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txtStudioName" class="txtStudioName" />
     </ui:VisualElement>
 </ui:UXML>
