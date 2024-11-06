@@ -9,6 +9,7 @@ TagManager:
   - Spawn/NotCollectible
   - Projectile/Player
   - Projectile/Enemy
+  - Enemy/Minion
   layers:
   - Default
   - TransparentFX

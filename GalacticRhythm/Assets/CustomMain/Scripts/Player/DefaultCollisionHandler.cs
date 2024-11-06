@@ -26,6 +26,11 @@ public class DefaultCollisionHandler : ICollisionHandler
         if (collision.gameObject.CompareTag("Spawn/NotCollectible"))
         {
             Debug.Log("La bala impacto con: " + collision.gameObject.tag);
+            collision.gameObject.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Projectile/Enemy"))
+        {
+            collision.gameObject.SetActive(false);
         }
     }
 }

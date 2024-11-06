@@ -6,12 +6,12 @@ public class Life : MonoBehaviour
     public int maxLife;
     [HideInInspector] public int currentLife;
 
-    UnityEvent<int> OnChanging;
+    public UnityEvent<int> OnChanging;
 
     void Start()
     {
         currentLife = maxLife;
-        //OnChanging.Invoke(currentLife);
+        OnChanging.Invoke(currentLife);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class Life : MonoBehaviour
             currentLife = temporaryLife;
         }
 
-        //OnChanging.Invoke(currentLife);
+        OnChanging.Invoke(currentLife);
 
         if(currentLife <= 0)
         {
@@ -49,6 +49,6 @@ public class Life : MonoBehaviour
             currentLife = temporaryLife;
         }
 
-        //OnChanging.Invoke(currentLife);
+        OnChanging.Invoke(currentLife);
     }
 }

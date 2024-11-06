@@ -21,3 +21,7 @@ MonoBehaviour:
     prefab: {fileID: 1173316260107234630, guid: e2b45f8ecd6df424c9412b892fc3a882, type: 3}
     poolSize: 3
     spawnProbability: 1
+  - poolKey: Enemies
+    prefab: {fileID: 3813080928865428182, guid: a5531608e5cbf184aa3f4bbe806a1c7e, type: 3}
+    poolSize: 15
+    spawnProbability: 15

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int points;
-    public Projectile projectilePrefab;
+    public Laser laserPrefab;
     public float shootInterval;
     public float shootTimer;
     public Transform shootPoint;
+    public Transform shootPointTwo;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour
     {
         if (shootTimer <= 0)
         {
-            Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+            Instantiate(laserPrefab, shootPoint.position, Quaternion.identity);
+            Instantiate(laserPrefab, shootPointTwo.position, Quaternion.identity);
             shootTimer = shootInterval;
         }
     }

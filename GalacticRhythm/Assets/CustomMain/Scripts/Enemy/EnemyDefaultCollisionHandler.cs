@@ -13,5 +13,9 @@ public class EnemyDefaultCollisionHandler : ICollisionHandler
                 playerLife.TakeDamage(config.damage);
             }
         }
+        if (collision.gameObject.CompareTag("Projectile/Player"))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }
