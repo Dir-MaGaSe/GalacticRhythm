@@ -6,7 +6,7 @@
     <Style src="project://database/Assets/OptionsPanelUI.uss?fileID=7433441132597879392&amp;guid=73848518ea7d76d4192b8611e0e232ae&amp;type=3#OptionsPanelUI" />
     <ui:VisualElement name="ParentContainer" style="flex-grow: 1;">
         <ui:VisualElement name="HUDContainer" class="hud-container" style="flex-grow: 1;">
-            <ui:VisualElement name="imgPowerUp" class="img-levelUp" style="flex-grow: 1;" />
+            <ui:VisualElement name="imgPowerUp" class="img-PowerUp" style="flex-grow: 1;" />
             <ui:ProgressBar value="22" name="lifeBar" class="hud_lifeBar" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnPause" class="btn-pause" />
         </ui:VisualElement>
