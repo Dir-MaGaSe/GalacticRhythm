@@ -4,8 +4,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform borderRight, borderLeft;
-    public float spawnInterval = 2f;
-    public int maxObjectsOnScreen = 5;
+    public float spawnInterval;
+    public int maxObjectsOnScreen;
     public ObjectsPoolData objectPoolData; // Referencia al ScriptableObject
 
     private int currentObjectsOnScreen = 0; // Objetos activos en pantalla

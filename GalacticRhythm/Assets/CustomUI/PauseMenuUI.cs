@@ -80,6 +80,7 @@ public class PauseMenuUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        this.gameObject.SetActive(false);
     }
 
     private void ClosePausePanel(ClickEvent evt)

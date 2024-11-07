@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0f880de85de404b9a0e5c41e98a8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMove: {x: 0.005, y: 0}
+  speedMove: {x: 0.0075, y: 0}
 --- !u!212 &987998150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 1456839491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 5.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -614,8 +614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borderRight: {fileID: 2092601126}
   borderLeft: {fileID: 1477146603}
-  spawnInterval: 5
-  maxObjectsOnScreen: 15
+  spawnInterval: 3
+  maxObjectsOnScreen: 25
   objectPoolData: {fileID: 11400000, guid: ca44cf34799ca624bac63cd094a2d00c, type: 2}
 --- !u!1 &1477146602
 GameObject:
@@ -946,6 +946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 50889147056638257, guid: 382d4293526a7704e89097ea856338da, type: 3}
+      propertyPath: fireRate
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4899085115198541813, guid: 382d4293526a7704e89097ea856338da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

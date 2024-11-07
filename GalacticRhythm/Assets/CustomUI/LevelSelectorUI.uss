@@ -4,7 +4,7 @@
     align-self: center;
     width: 1920px;
     height: 100%;
-    background-image: url("project://database/Assets/Custom/UI/Background.png?fileID=21300000&guid=3d8914830c62c014b9ab33e5ec720b63&type=3#Background");
+    background-image: url("project://database/Assets/CustomUI/Custom/UI/Background.png?fileID=21300000&guid=3d8914830c62c014b9ab33e5ec720b63&type=3#Background");
     -unity-slice-left: 0;
     -unity-background-scale-mode: stretch-to-fill;
     justify-content: flex-start;
@@ -23,6 +23,7 @@
     align-items: center;
     flex-direction: column;
     flex-shrink: 0;
+    display: flex;
 }
 
 .child-container-up {
@@ -56,7 +57,7 @@
 
 .txtSelectLevel {
     background-color: rgba(255, 0, 0, 0);
-    -unity-font: url("project://database/Assets/Custom/UI/Fonts/UpheavalPro.ttf?fileID=12800000&guid=c85fe93e6fb0ecd499db97aa4809d1bf&type=3#UpheavalPro");
+    -unity-font: url("project://database/Assets/CustomUI/Custom/UI/Fonts/UpheavalPro.ttf?fileID=12800000&guid=c85fe93e6fb0ecd499db97aa4809d1bf&type=3#UpheavalPro");
     font-size: 175px;
     -unity-font-definition: initial;
     -unity-font-style: normal;
@@ -76,7 +77,7 @@
 
 .imgLevelOne {
     align-self: center;
-    background-image: url("project://database/Assets/game_background_1.png?fileID=21300000&guid=dfa3c401dde435940b1f4f5e4ed7127c&type=3#game_background_1");
+    background-image: url("project://database/Assets/CustomUI/game_background_1.png?fileID=21300000&guid=dfa3c401dde435940b1f4f5e4ed7127c&type=3#game_background_1");
     min-height: auto;
     -unity-background-scale-mode: scale-and-crop;
     width: 100%;
@@ -109,7 +110,7 @@
 }
 
 .btnBack {
-    background-image: url("project://database/Assets/Custom/UI/Button1%20R.png?fileID=21300000&guid=59e50cef0bc5fc8479d59c000503eb8a&type=3#Button1 R");
+    background-image: url("project://database/Assets/CustomUI/Custom/UI/Button1%20R.png?fileID=21300000&guid=59e50cef0bc5fc8479d59c000503eb8a&type=3#Button1 R");
     -unity-background-scale-mode: scale-to-fit;
     height: 100%;
     width: 400px;
@@ -117,7 +118,7 @@
 }
 
 .btnStart {
-    background-image: url("project://database/Assets/Custom/UI/Button1%20G.png?fileID=21300000&guid=c583c7f8785a6214e8d2c1215688684d&type=3#Button1 G");
+    background-image: url("project://database/Assets/CustomUI/Custom/UI/Button1%20G.png?fileID=21300000&guid=c583c7f8785a6214e8d2c1215688684d&type=3#Button1 G");
     -unity-background-scale-mode: stretch-to-fill;
     max-height: 100%;
     flex-grow: 1;
@@ -128,7 +129,7 @@
 
 .btn-common {
     -unity-font-definition: initial;
-    -unity-font: url("project://database/Assets/Custom/UI/Fonts/Agdasima-Regular.ttf?fileID=12800000&guid=840b2655d67d9c449bf28a480a2c00af&type=3#Agdasima-Regular");
+    -unity-font: url("project://database/Assets/CustomUI/Custom/UI/Fonts/Agdasima-Regular.ttf?fileID=12800000&guid=840b2655d67d9c449bf28a480a2c00af&type=3#Agdasima-Regular");
     font-size: 72px;
     -unity-text-align: middle-center;
     -unity-font-style: bold;
@@ -148,4 +149,5 @@
     flex-direction: column;
     flex-shrink: 0;
     display: none;
+    visibility: visible;
 }

@@ -12,6 +12,7 @@ public class LevelSelectorUI : MonoBehaviour
     public string previousScreenName;
 
     // Level Selector
+    VisualElement levelSelectorScreen;
     Button backButton, startButton;
     
     // Loading Bar
@@ -24,6 +25,7 @@ public class LevelSelectorUI : MonoBehaviour
         VisualElement root = levelSelector.rootVisualElement;
 
         // Level Selector Queries
+        levelSelectorScreen = root.Q<VisualElement>("ParentContainer");
         backButton = root.Q<Button>("btnBack");
         startButton = root.Q<Button>("btnStart");
         // Callbacks
@@ -40,8 +42,9 @@ public class LevelSelectorUI : MonoBehaviour
 
     private void StartLevel(ClickEvent evt)
     {
+        levelSelectorScreen.AddToClassList("parent-container--deactivate");
         loadScreen.RemoveFromClassList("load_container--deactivate");
-        //StartCoroutine(nameof(LoadGame));
+        StartCoroutine(nameof(LoadGame));
     }
 
     private void ReturnMainMenu(ClickEvent evt)
@@ -54,7 +57,7 @@ public class LevelSelectorUI : MonoBehaviour
         AsyncOperation loadingGame = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
         while(!loadingGame.isDone)
         {
-            loadingBar.value = loadingGame.progress;
+            loadingBar.lowValue = loadingGame.progress;
             yield return null;
         }
     }

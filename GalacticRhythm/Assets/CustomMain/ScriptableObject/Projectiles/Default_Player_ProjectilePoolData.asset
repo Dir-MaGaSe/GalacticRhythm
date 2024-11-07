@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8107bb68323339a488ee78381d363dbf, type: 3}
   m_Name: Default_Player_ProjectilePoolData
   m_EditorClassIdentifier: 
-  speed: 1.5
   damage: 5
-  lifetime: 10
+  speed: 2.5
+  lifetime: 8
   poolTag: playerDefault
   projectileType: 0
   explosionRadius: 0.5

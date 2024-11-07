@@ -34,7 +34,7 @@ public class InGameUI : MonoBehaviour
         lifeBar.highValue = playerLife.maxLife;
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         lifeBar.value = playerLife.currentLife;
     }
