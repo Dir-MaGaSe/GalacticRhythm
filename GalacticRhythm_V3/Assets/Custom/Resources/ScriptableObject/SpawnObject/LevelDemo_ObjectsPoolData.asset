@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1342aac3a05c3f145bdb8ccab80ed2b5, type: 3}
+  m_Name: LevelDemo_ObjectsPoolData
+  m_EditorClassIdentifier: 
+  poolItems:
+  - poolKey: defaultObstacle
+    prefab: {fileID: 1393155421381669015, guid: 211f0c4e2e3b4184bb3a262219634528, type: 3}
+    poolSize: 10
+    spawnProbability: 8
+  - poolKey: PowerUp
+    prefab: {fileID: 1173316260107234630, guid: e2b45f8ecd6df424c9412b892fc3a882, type: 3}
+    poolSize: 2
+    spawnProbability: 1
+  - poolKey: Enemies
+    prefab: {fileID: 3813080928865428182, guid: a5531608e5cbf184aa3f4bbe806a1c7e, type: 3}
+    poolSize: 6
+    spawnProbability: 4
