@@ -13,8 +13,6 @@ public class Life : MonoBehaviour
         currentLife = maxLife;
         //OnChanging.Invoke(currentLife);
     }
-
-    // Update is called once per frame
     public void TakeDamage(int damage)
     {
         int temporaryLife = currentLife - damage;
