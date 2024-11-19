@@ -1,19 +1,18 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class SpawnManager : MonoBehaviour
 {
-    [Header("Configuración de Spawn")]
+    [Header("Configuración de Spawn Enemigo")]
     [SerializeField] Transform borderLeft;  // Límite izquierdo de la pantalla para el spawn
     [SerializeField] Transform borderRight; // Límite derecho de la pantalla para el spawn
     [SerializeField] private float spawnInterval = 3f; // Intervalo base de spawn
     [SerializeField] private int difficultyLevel;  // Nivel de dificultad que afecta las probabilidades de spawn
     
     [Header("Referencias")]
-    [SerializeField] private GameObject prefabObject;  // Prefab base para los elementos
-    [SerializeField] private List<FallingElement> defaultElementsPool;  //Lista de posibles elementos que caen
-    [SerializeField] private List<PowerUpElement> powerupsElementsPool;  //Lista de posibles powerups que caen
+    [SerializeField] private GameObject prefabEnemy;  // Prefab base para los elementos
     [SerializeField] private List<EnemyElement> enemyElementsPool;  //Lista de posibles enemigos que aparecen
     
     private ObjectPool<GameObject> gameObjectPool; // Pool de objetos
@@ -37,11 +36,11 @@ public class SpawnManager : MonoBehaviour
     private void InitializeObjectPool()
     {
         // Inicializa el pool de objetos con un tamaño ajustado al número de elementos
-        int poolMaxSize = (defaultElementsPool.Count + powerupsElementsPool.Count + enemyElementsPool.Count) * 3;
+        int poolMaxSize = enemyElementsPool.Count * 3;
 
         gameObjectPool = new ObjectPool<GameObject>(() => 
         {
-            return Instantiate(prefabObject); // Crea un nuevo objeto de pool
+            return Instantiate(prefabEnemy); // Crea un nuevo objeto de pool
         }, poolObject => 
         {
             poolObject.gameObject.SetActive(true); // Activa el objeto al obtenerlo del pool
@@ -56,24 +55,10 @@ public class SpawnManager : MonoBehaviour
     
     private void SpawnRandomElement()
     {
-        // Selecciona aleatoriamente un elemento
-        float random = Random.value;
         FallingElement elementToSpawn = null;
 
+        // Selecciona aleatoriamente un enemigo
         elementToSpawn = enemyElementsPool[Random.Range(0, enemyElementsPool.Count)];
-        
-        // Ajustar probabilidades según dificultad
-        float obstacleProb = .3f;
-        float powerUpProb = 0.1f - (difficultyLevel * 0.01f);
-        
-        if (random < obstacleProb)
-        {
-            elementToSpawn = defaultElementsPool[Random.Range(0, defaultElementsPool.Count)];
-        }
-        else if (random < obstacleProb + powerUpProb)
-        {
-            elementToSpawn = powerupsElementsPool[Random.Range(0, powerupsElementsPool.Count)];
-        }
         
         if (elementToSpawn != null && Random.value <= elementToSpawn.spawnProbability)
         {
