@@ -16,8 +16,8 @@ MonoBehaviour:
   lifetime: 10
   elementSprite: {fileID: -993788443, guid: 4a41b7f6f387cf344b080eeac1007e41, type: 3}
   elementAudio: {fileID: 0}
-  elementAnimator: {fileID: 0}
-  elementVisualEffect: {fileID: 0}
+  elementAnimatorController: {fileID: 0}
+  elementVisualEffect: {fileID: 1156955145065736, guid: 9111742f4b509c149921306d21dcc194, type: 3}
   damage: 1
   fireRate: 1.5
   moveSpeed: 2.55

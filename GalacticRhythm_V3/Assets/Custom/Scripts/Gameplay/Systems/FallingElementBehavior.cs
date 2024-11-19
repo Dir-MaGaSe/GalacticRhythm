@@ -1,6 +1,8 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Pool;
+
 
 public class FallingElementBehavior : MonoBehaviour
 {
@@ -29,13 +31,15 @@ public class FallingElementBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         imageRender = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        AnimatorController animController = new AnimatorController();
 
         pool = objectPool; // Almacena la referencia de la pool
         elementData = data; // Guarda la referencia al scriptable
         
         imageRender.sprite = data.elementSprite; // Asigna el sprite del scriptable
         soundEffect = data.elementAudio; // Almacena el efecto de sonido del scriptable
-        animator = data.elementAnimator; // Almacena el animator del scriptable para controlar las animaciones
+        animController = data.elementAnimatorController;
+        animator.runtimeAnimatorController = animController;
         visualEffect = data.elementVisualEffect; // Almacena el efecto visual del scriptable
 
         effectCoroutine = null;
@@ -74,6 +78,7 @@ public class FallingElementBehavior : MonoBehaviour
                     }
 
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
                 break;
@@ -87,6 +92,7 @@ public class FallingElementBehavior : MonoBehaviour
                         playerLife.TakeDamage(elementData.contactDamage);
                     }
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
 
@@ -103,9 +109,14 @@ public class FallingElementBehavior : MonoBehaviour
                     if (other.TryGetComponent(out Life playerLife))
                     {
                         playerLife.TakeDamage(elementData.contactDamage);
+                        Instantiate(visualEffect, transform.position, Quaternion.identity);
+                        ReturnToPool();
                     }
-
+                }
+                if (!other.gameObject.CompareTag("Enemy/Minion") || !other.gameObject.CompareTag("Projectile/Enemy"))
+                {
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
                 break;

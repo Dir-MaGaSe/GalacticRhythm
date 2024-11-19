@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -28,13 +29,15 @@ public class ProjectileBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         imageRender = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        AnimatorController animController = new AnimatorController();
 
         pool = objectPool; // Almacena la referencia de la pool
         projectileData = data; // Guarda la referencia al scriptable
         
         imageRender.sprite = data.elementSprite; // Asigna el sprite del scriptable
         soundEffect = data.elementAudio; // Almacena el efecto de sonido del scriptable
-        animator = data.elementAnimator; // Almacena el animator del scriptable para controlar las animaciones
+        animController = data.elementAnimatorController;
+        animator.runtimeAnimatorController = animController;
         visualEffect = data.elementVisualEffect; // Almacena el efecto visual del scriptable
     }
 

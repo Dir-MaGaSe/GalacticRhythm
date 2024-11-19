@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewElement", menuName = "GalacticRhythm/SpawnElements/Base")]
@@ -10,6 +11,6 @@ public class ElementBase : ScriptableObject
     //Art
     public Sprite elementSprite;
     public AudioClip elementAudio;
-    public Animator elementAnimator;
+    public AnimatorController elementAnimatorController;
     public GameObject elementVisualEffect;
 }

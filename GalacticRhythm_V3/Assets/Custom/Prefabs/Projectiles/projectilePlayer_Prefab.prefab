@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1259663967300803144}
   - component: {fileID: 2134020477216598328}
-  - component: {fileID: 1088057919892919768}
   - component: {fileID: 2570017004459019261}
   - component: {fileID: 1933144840221967402}
   - component: {fileID: 1969450908586501150}
+  - component: {fileID: 1088057919892919768}
   m_Layer: 0
   m_Name: projectilePlayer_Prefab
   m_TagString: Projectile/Player
@@ -88,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1088057919892919768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3606418660106050240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5417801016d46d647bd71ed78dd2a732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2570017004459019261
 Rigidbody2D:
   serializedVersion: 4
@@ -183,3 +171,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1088057919892919768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606418660106050240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5417801016d46d647bd71ed78dd2a732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
