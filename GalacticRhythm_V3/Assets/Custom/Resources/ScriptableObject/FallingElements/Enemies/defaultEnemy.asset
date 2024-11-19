@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76ff21552524224a91443292a34fa83, type: 3}
+  m_Name: defaultEnemy
+  m_EditorClassIdentifier: 
+  elementName: default
+  lifetime: 25
+  elementSprite: {fileID: 21300000, guid: 1efaac964a5ae474093a5239952c338f, type: 3}
+  elementAudio: {fileID: 0}
+  elementAnimator: {fileID: 0}
+  elementVisualEffect: {fileID: 0}
+  spawnProbability: 0.75
+  fallSpeed: 0.85
+  contactDamage: 1
+  enemyLife: {fileID: 8826804295134121521, guid: a5531608e5cbf184aa3f4bbe806a1c7e, type: 3}
