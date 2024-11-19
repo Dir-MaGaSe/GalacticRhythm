@@ -4,9 +4,9 @@
     align-self: center;
     width: 1920px;
     height: 100%;
-    background-image: url("project://database/Assets/Custom/Art/Sprites/UI/Background.png?fileID=21300000&guid=3d8914830c62c014b9ab33e5ec720b63&type=3#Background");
+    background-image: url("project://database/Assets/Custom/Art/Sprites/UI/Background%20-%20Copy.png?fileID=21300000&guid=ec44452f9c99b3c4ebab2c13b863b8d8&type=3#Background - Copy");
     -unity-slice-left: 0;
-    -unity-background-scale-mode: stretch-to-fill;
+    -unity-background-scale-mode: scale-and-crop;
     justify-content: flex-start;
     align-items: stretch;
 }
@@ -44,7 +44,7 @@
 }
 
 .img-spaceship {
-    background-image: url("project://database/Assets/Custom/Art/Sprites/Enemies/ship_3.png?fileID=21300000&guid=17f5255557f6d6042b7c59ed374ebb06&type=3#ship_3");
+    background-image: url("project://database/Assets/Sprites/Player/Spaceship%201%201.png?fileID=21300000&guid=c168f565b4b10914d92dd834df006b50&type=3#Spaceship 1 1");
     -unity-background-scale-mode: scale-to-fit;
     align-items: center;
     justify-content: center;

@@ -17,7 +17,7 @@ MonoBehaviour:
   elementSprite: {fileID: 21300000, guid: 1efaac964a5ae474093a5239952c338f, type: 3}
   elementAudio: {fileID: 0}
   elementAnimator: {fileID: 0}
-  elementVisualEffect: {fileID: 0}
+  elementVisualEffect: {fileID: 2843103319740266272, guid: a5531608e5cbf184aa3f4bbe806a1c7e, type: 3}
   spawnProbability: 0.75
   fallSpeed: 0.85
   contactDamage: 1
