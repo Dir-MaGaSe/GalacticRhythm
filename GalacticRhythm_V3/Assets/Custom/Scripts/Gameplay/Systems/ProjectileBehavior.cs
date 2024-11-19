@@ -38,11 +38,11 @@ public class ProjectileBehavior : MonoBehaviour
         visualEffect = data.elementVisualEffect; // Almacena el efecto visual del scriptable
     }
 
-    private void Start() 
+    private void Start()
     {
         StartCoroutine(DeactivateAfterTime(projectileData.lifetime));
     }
-    
+
     private void FixedUpdate() 
     {
         // Aplica la velocidad definida en el scriptable
@@ -52,7 +52,50 @@ public class ProjectileBehavior : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        switch (this.gameObject.tag)
+        {
+            case "Projectile/Player":
+                if (other.gameObject.CompareTag("Enemy/Minion"))
+                {
+                    if (other.TryGetComponent(out Life enemyLife))
+                    {
+                        enemyLife.TakeDamage(projectileData.damage);
+                    }
+                    //AudioManager.Instance.PlayEffect(soundEffect);
+                    ReturnToPool();
+                }
+
+                if (!other.gameObject.CompareTag("Player"))
+                {
+                    //AudioManager.Instance.PlayEffect(soundEffect);
+                    ReturnToPool();
+                }
+
+                break;
+
+            case "Projectile/Enemy":
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    if (other.TryGetComponent(out Life playerLife))
+                    {
+                        playerLife.TakeDamage(projectileData.damage);
+                    }
+                    //AudioManager.Instance.PlayEffect(soundEffect);
+                    ReturnToPool();
+                }
+
+                if (!other.gameObject.CompareTag("Enemy/Minion"))
+                {
+                    //AudioManager.Instance.PlayEffect(soundEffect);
+                    ReturnToPool();
+                }
+
+                break;
+
+            default:
+
+                break;
+        }
     }
 
     IEnumerator DeactivateAfterTime(float delay)

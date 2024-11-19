@@ -3,15 +3,15 @@ using UnityEngine.Events;
 
 public class Life : MonoBehaviour
 {
+    //Life settings
     public int maxLife;
     [HideInInspector] public int currentLife;
 
-    //public UnityEvent<int> OnChanging;
+    //
 
     void Start()
     {
         currentLife = maxLife;
-        //OnChanging.Invoke(currentLife);
     }
     public void TakeDamage(int damage)
     {
@@ -25,8 +25,6 @@ public class Life : MonoBehaviour
         {
             currentLife = temporaryLife;
         }
-
-        //OnChanging.Invoke(currentLife);
 
         if(currentLife <= 0)
         {
@@ -46,7 +44,5 @@ public class Life : MonoBehaviour
         {
             currentLife = temporaryLife;
         }
-
-        //OnChanging.Invoke(currentLife);
     }
 }

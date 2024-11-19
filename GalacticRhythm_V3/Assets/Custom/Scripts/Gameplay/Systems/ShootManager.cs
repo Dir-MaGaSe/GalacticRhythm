@@ -50,12 +50,12 @@ public class ShootManager : MonoBehaviour
         // Obtiene un objeto del pool y lo configura
         GameObject pooledObject = gameObjectPool.Get();
 
-        //FallingElementBehavior behavior = pooledObject.GetComponent<FallingElementBehavior>();
+        ProjectileBehavior behavior = pooledObject.GetComponent<ProjectileBehavior>();
         
         if (pooledObject != null)
         {
-            //behavior.Initialize(data, gameObjectPool); // Inicializa el elemento con sus datos específicos
-            //ConfigurePosition(pooledObject); // Configura la posición inicial del spawn
+            behavior.Initialize(data, gameObjectPool); // Inicializa el elemento con sus datos específicos
+            pooledObject.transform.position = firePoint.transform.position; // Configura la posición inicial del spawn
         }
     }
 }

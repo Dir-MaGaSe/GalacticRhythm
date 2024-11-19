@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019e3f11a63ebef4d905ab414d48e4c8, type: 3}
   m_Name: Default_Player_ProjectileBase
   m_EditorClassIdentifier: 
-  elementName: 
-  damage: 0
-  lifetime: 0
-  elementSprite: {fileID: 0}
+  elementName: playerDefault
+  lifetime: 5
+  elementSprite: {fileID: 464201230, guid: 4a41b7f6f387cf344b080eeac1007e41, type: 3}
   elementAudio: {fileID: 0}
   elementAnimator: {fileID: 0}
-  visualEffect: {fileID: 0}
+  elementVisualEffect: {fileID: 0}
+  damage: 1
   fireRate: 2
+  moveSpeed: 2.35
