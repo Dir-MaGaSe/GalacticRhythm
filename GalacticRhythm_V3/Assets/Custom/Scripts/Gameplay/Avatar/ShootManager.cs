@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -11,6 +12,8 @@ public class ShootManager : MonoBehaviour
     
     private ObjectPool<GameObject> gameObjectPool; // Pool de objetos
     private float nextSpawnTime; // Tiempo siguiente de spawn
+
+    public event EventHandler OnShooting;
     
     private void Start()
     {
@@ -23,10 +26,16 @@ public class ShootManager : MonoBehaviour
         if (Time.time >= nextSpawnTime) // Verifica si es tiempo de spawn
         {
             SpawnProjectile(projectileData);
-            nextSpawnTime = Time.time + projectileData.fireRate; // Recalcula el tiempo para el próximo spawn
+            OnShooting?.Invoke(this, EventArgs.Empty);
+            nextSpawnTime = Time.time + NextShotCalculate(); // Recalcula el tiempo para el próximo spawn
         }
     }
-    
+
+    public float NextShotCalculate(float bonus = 1f)
+    {
+        return projectileData.fireRate * bonus;
+    }
+
     private void InitializeObjectPool()
     {
         // Inicializa el pool de objetos

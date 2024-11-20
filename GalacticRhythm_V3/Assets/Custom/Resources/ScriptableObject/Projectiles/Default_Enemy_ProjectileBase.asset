@@ -19,5 +19,5 @@ MonoBehaviour:
   elementAnimatorController: {fileID: 0}
   elementVisualEffect: {fileID: 1156955145065736, guid: 9111742f4b509c149921306d21dcc194, type: 3}
   damage: 1
-  fireRate: 1.5
-  moveSpeed: 2.55
+  fireRate: 3.15
+  moveSpeed: 3

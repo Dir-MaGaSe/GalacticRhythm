@@ -18,6 +18,6 @@ MonoBehaviour:
   elementAudio: {fileID: 0}
   elementAnimatorController: {fileID: 0}
   elementVisualEffect: {fileID: 1156955145065736, guid: 9111742f4b509c149921306d21dcc194, type: 3}
-  damage: 1
+  damage: 5
   fireRate: 2
-  moveSpeed: 2.35
+  moveSpeed: 2.75

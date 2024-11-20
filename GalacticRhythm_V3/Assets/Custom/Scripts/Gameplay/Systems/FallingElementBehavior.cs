@@ -19,6 +19,9 @@ public class FallingElementBehavior : MonoBehaviour
     private AudioClip soundEffect; // Efecto de sonido
     private Animator animator; // Animacion
     private GameObject visualEffect; // Efecto Visual
+
+    //PowerUp
+    private PowerUpManager powerUpManager;
     
     private void OnEnable() 
     {
@@ -32,6 +35,7 @@ public class FallingElementBehavior : MonoBehaviour
         imageRender = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         AnimatorController animController = new AnimatorController();
+
 
         pool = objectPool; // Almacena la referencia de la pool
         elementData = data; // Guarda la referencia al scriptable
@@ -47,6 +51,7 @@ public class FallingElementBehavior : MonoBehaviour
 
     private void Start() 
     {
+        powerUpManager = GameObject.Find("Player").GetComponent<PowerUpManager>();
         StartCoroutine(DeactivateAfterTime(elementData.lifetime));
     }
     
@@ -67,13 +72,21 @@ public class FallingElementBehavior : MonoBehaviour
                 {
                     if(effectCoroutine == null)
                     {
-                        effectCoroutine = ApplyEffectsCoroutine(powerUp.effectDuration, powerUp.effectMultiplier, powerUp.powerUpType);
+                        effectCoroutine = ApplyEffectsCoroutine(powerUp.effectDuration,
+                                                                powerUp.effectMultiplier,
+                                                                powerUp.lifeAmount,
+                                                                true,
+                                                                powerUp.powerUpType);
                         StartCoroutine(effectCoroutine);
                     }
                     else
                     {
                         StopCoroutine(effectCoroutine);
-                        effectCoroutine = ApplyEffectsCoroutine(powerUp.effectDuration, powerUp.effectMultiplier, powerUp.powerUpType);
+                        effectCoroutine = ApplyEffectsCoroutine(powerUp.effectDuration,
+                                                                powerUp.effectMultiplier,
+                                                                powerUp.lifeAmount,
+                                                                true,
+                                                                powerUp.powerUpType);
                         StartCoroutine(effectCoroutine);
                     }
 
@@ -84,6 +97,8 @@ public class FallingElementBehavior : MonoBehaviour
                 break;
 
             case EnemyElement enemy:
+
+                Life enemyLife = enemy.enemyLife;
                 
                 if (other.gameObject.CompareTag("Player"))
                 {
@@ -96,11 +111,6 @@ public class FallingElementBehavior : MonoBehaviour
                     ReturnToPool();
                 }
 
-                if (!other.gameObject.CompareTag("Enemy/Minion") || !other.gameObject.CompareTag("Projectile/Enemy"))
-                {
-                    ReturnToPool();
-                }
-                
                 break;
 
             default:
@@ -123,12 +133,18 @@ public class FallingElementBehavior : MonoBehaviour
         }
     }
 
-    private IEnumerator ApplyEffectsCoroutine(float duration, float multiplier, PowerUpElement.PowerUpType powerUpType)
+    private IEnumerator ApplyEffectsCoroutine(float duration,
+                                              float multiplier,
+                                              int lifeRecover,
+                                              bool activeEffect,
+                                              PowerUpElement.PowerUpType powerUpType)
     {
-        //GameManager.Instance.CalculateSpeedBonus(multiplier, true);
+        if(powerUpManager != null)
+        {
+            powerUpManager.ApplyPowerUp(activeEffect, multiplier, lifeRecover,  powerUpType);
+        }
         yield return new WaitForSeconds(duration);
-        //GameManager.Instance.CalculateSpeedBonus(multiplier, false);
-        effectCoroutine = null;
+        powerUpManager.ApplyPowerUp(false);
     }
 
     IEnumerator DeactivateAfterTime(float delay)

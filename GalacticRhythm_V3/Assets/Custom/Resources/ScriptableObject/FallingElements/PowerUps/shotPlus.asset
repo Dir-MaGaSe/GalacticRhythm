@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d980394436067c43930b8975c6a92c1, type: 3}
-  m_Name: lifePlus
+  m_Name: shotPlus
   m_EditorClassIdentifier: 
-  elementName: lifePlus
+  elementName: shotPlus
   lifetime: 15
-  elementSprite: {fileID: 21300000, guid: e0ee0e8d1a426f145b8b502f8ee42290, type: 3}
+  elementSprite: {fileID: 21300000, guid: 2c2d00b27e653e841a04959dc13455bf, type: 3}
   elementAudio: {fileID: 8300000, guid: a6a0c1e8b03d1e446bc5a9179d6984cf, type: 3}
   elementAnimatorController: {fileID: 0}
   elementVisualEffect: {fileID: 1156955145065736, guid: 9111742f4b509c149921306d21dcc194, type: 3}
   spawnProbability: 0.35
-  fallSpeed: 2.65
+  fallSpeed: 2.75
   contactDamage: 0
-  powerUpType: 0
-  effectDuration: 0
-  effectMultiplier: 0
-  lifeAmount: 1
+  powerUpType: 1
+  effectDuration: 8
+  effectMultiplier: 0.6
+  lifeAmount: 0

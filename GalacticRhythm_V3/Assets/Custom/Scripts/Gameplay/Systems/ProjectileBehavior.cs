@@ -65,12 +65,14 @@ public class ProjectileBehavior : MonoBehaviour
                         enemyLife.TakeDamage(projectileData.damage);
                     }
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
 
                 if (!other.gameObject.CompareTag("Player"))
                 {
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
 
@@ -84,12 +86,14 @@ public class ProjectileBehavior : MonoBehaviour
                         playerLife.TakeDamage(projectileData.damage);
                     }
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
 
                 if (!other.gameObject.CompareTag("Enemy/Minion"))
                 {
                     //AudioManager.Instance.PlayEffect(soundEffect);
+                    Instantiate(visualEffect, transform.position, Quaternion.identity);
                     ReturnToPool();
                 }
 

@@ -9,8 +9,8 @@ public class MusicManager : MonoBehaviour
     public event Action<float> OnLowDetected; // Evento para altos pronunciados
 
     [Range(0.01f, 0.5f)] public float sensitivity = 0.1f; // Sensibilidad para detectar picos
-    private float lowThreshold = 0.05f; // Umbral para detectar bajos
-    private float highThreshold = 0.2f; // Umbral para detectar altos
+    [Range(0.01f, 0.1f)] [SerializeField] private float lowThreshold; // Umbral para detectar bajos
+    [Range(0.25f, 0.35f)] [SerializeField] private float highThreshold; // Umbral para detectar altos
     
     void Update()
     {

@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Life : MonoBehaviour
 {
@@ -7,7 +7,9 @@ public class Life : MonoBehaviour
     public int maxLife;
     [HideInInspector] public int currentLife;
 
-    //
+    //Eventos
+    public event EventHandler OnLiveLoss;
+
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class Life : MonoBehaviour
 
         if(currentLife <= 0)
         {
+            OnLiveLoss?.Invoke(this, EventArgs.Empty);
             this.gameObject.SetActive(false);
         }
     }

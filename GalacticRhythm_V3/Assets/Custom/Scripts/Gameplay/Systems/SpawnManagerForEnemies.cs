@@ -8,26 +8,33 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform borderLeft;  // Límite izquierdo de la pantalla para el spawn
     [SerializeField] Transform borderRight; // Límite derecho de la pantalla para el spawn
     [SerializeField] private float spawnInterval = 3f; // Intervalo base de spawn
-    [SerializeField] private int difficultyLevel;  // Nivel de dificultad que afecta las probabilidades de spawn
+    private int difficultyLevel = 1;  // Nivel de dificultad que afecta las probabilidades de spawn
     
+    [Header("Configuración Musical")]
+    [SerializeField] private float minToSpawn = .01f;
+
     [Header("Referencias")]
     [SerializeField] private GameObject prefabEnemy;  // Prefab base para los elementos
     [SerializeField] private List<EnemyElement> enemyElementsPool;  //Lista de posibles enemigos que aparecen
     
     private ObjectPool<GameObject> gameObjectPool; // Pool de objetos
+    private MusicManager musicManager;
     private float nextSpawnTime; // Tiempo siguiente de spawn
-    
+    private bool availableSpawn;
+
     private void Start()
     {
         InitializeObjectPool(); // Inicializa el pool de objetos
+        musicManager = FindObjectOfType<MusicManager>();
         nextSpawnTime = Time.time + spawnInterval; // Calcula el primer spawn
+    
+        if(musicManager != null) musicManager.OnHighDetected += SpawnRandomElement;
     }
     
     private void Update()
     {
         if (Time.time >= nextSpawnTime) // Verifica si es tiempo de spawn
         {
-            SpawnRandomElement();
             CalculateNextSpawnTime(); // Recalcula el tiempo para el próximo spawn
         }
     }
@@ -52,8 +59,10 @@ public class SpawnManager : MonoBehaviour
         }, true, 10, poolMaxSize); // Configuración inicial del pool
     }
     
-    private void SpawnRandomElement()
+    private void SpawnRandomElement(float musicHigh)
     {
+        if(!availableSpawn) return;
+
         FallingElement elementToSpawn = null;
 
         // Selecciona aleatoriamente un enemigo
@@ -61,7 +70,11 @@ public class SpawnManager : MonoBehaviour
         
         if (elementToSpawn != null && Random.value <= elementToSpawn.spawnProbability)
         {
-            SpawnElement(elementToSpawn); // Genera el elemento con la configuración del scriptable
+            if(musicHigh > minToSpawn) 
+            {
+                SpawnElement(elementToSpawn); // Genera el elemento con la configuración del scriptable
+                availableSpawn = false;
+            }
         }
     }
     
@@ -91,5 +104,6 @@ public class SpawnManager : MonoBehaviour
         // Calcula el próximo tiempo de spawn según el nivel de dificultad
         float spawnRate = spawnInterval * (1f - (difficultyLevel * 0.115f));
         nextSpawnTime = Time.time + spawnRate;
+        availableSpawn = true;
     }
 }

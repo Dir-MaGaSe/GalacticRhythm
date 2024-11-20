@@ -38,6 +38,7 @@ public class InGameUI : MonoBehaviour
     private void Update() 
     {
         lifeBar.lowValue = playerLife.currentLife;
+        lifeBar.value = playerLife.currentLife;
     }
     private void OpenPausePanel(ClickEvent evt)
     {
