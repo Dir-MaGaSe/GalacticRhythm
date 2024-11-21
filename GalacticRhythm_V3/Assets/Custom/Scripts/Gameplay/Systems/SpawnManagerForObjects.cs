@@ -11,7 +11,7 @@ public class SpawnManagerForObjects : MonoBehaviour
     private int difficultyLevel = 1;  // Nivel de dificultad que afecta las probabilidades de spawn
     
     [Header("Configuración Musical")]
-    [SerializeField] private float minToSpawn = .001f;
+    [SerializeField] private float minToSpawn = .01f;
 
 
     [Header("Referencias")]
@@ -79,6 +79,7 @@ public class SpawnManagerForObjects : MonoBehaviour
         
         if (elementToSpawn != null && Random.value <= elementToSpawn.spawnProbability)
         {
+            //Debug.Log(minToSpawn + " < " + musicLow);
             if(minToSpawn < musicLow) 
             {
                 SpawnElement(elementToSpawn); // Genera el elemento con la configuración del scriptable

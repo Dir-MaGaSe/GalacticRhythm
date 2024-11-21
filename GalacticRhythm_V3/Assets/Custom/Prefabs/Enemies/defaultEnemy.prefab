@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7754648118832844734}
   - component: {fileID: 8933664916744200107}
   - component: {fileID: 5826765580548826789}
+  - component: {fileID: 159717787244249792}
   m_Layer: 0
   m_Name: defaultEnemy
   m_TagString: Enemy/Minion
@@ -229,6 +230,21 @@ MonoBehaviour:
   firePoint: {fileID: 6676847523500198028}
   prefabProjectile: {fileID: 3606418660106050240, guid: fe5ea44deed4ccb4890f82d55eb7994f, type: 3}
   projectileData: {fileID: 11400000, guid: faea6bc86310cea4bb9946abbcfce3e9, type: 2}
+--- !u!114 &159717787244249792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843103319740266272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e03937c2ee8164d8f29bf05f9e04d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRenderer: {fileID: 4535924178433901771}
+  spawnInterval: 1
+  maincolor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4022331608590789622
 GameObject:
   m_ObjectHideFlags: 0

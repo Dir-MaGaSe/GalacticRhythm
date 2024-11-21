@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManagerForEnemies : MonoBehaviour
 {
     [Header("Configuración de Spawn Enemigo")]
     [SerializeField] Transform borderLeft;  // Límite izquierdo de la pantalla para el spawn
     [SerializeField] Transform borderRight; // Límite derecho de la pantalla para el spawn
-    [SerializeField] private float spawnInterval = 3f; // Intervalo base de spawn
+    [SerializeField] private float spawnInterval = 1f; // Intervalo base de spawn
     private int difficultyLevel = 1;  // Nivel de dificultad que afecta las probabilidades de spawn
     
     [Header("Configuración Musical")]
-    [SerializeField] private float minToSpawn = .01f;
+    [SerializeField] private float minToSpawn = .05f;
 
     [Header("Referencias")]
     [SerializeField] private GameObject prefabEnemy;  // Prefab base para los elementos
@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     private ObjectPool<GameObject> gameObjectPool; // Pool de objetos
     private MusicManager musicManager;
     private float nextSpawnTime; // Tiempo siguiente de spawn
-    private bool availableSpawn;
+    private bool availableSpawn = true;
 
     private void Start()
     {
@@ -70,7 +70,8 @@ public class SpawnManager : MonoBehaviour
         
         if (elementToSpawn != null && Random.value <= elementToSpawn.spawnProbability)
         {
-            if(musicHigh > minToSpawn) 
+            Debug.Log(minToSpawn + " < " + musicHigh);
+            if (minToSpawn < musicHigh) 
             {
                 SpawnElement(elementToSpawn); // Genera el elemento con la configuración del scriptable
                 availableSpawn = false;

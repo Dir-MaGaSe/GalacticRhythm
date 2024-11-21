@@ -485,9 +485,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  sensitivity: 0.1
+  sensitivity: 0.5
   lowThreshold: 0.01
-  highThreshold: 0.35
+  highThreshold: 0.15
 --- !u!1 &987998147
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
   borderLeft: {fileID: 1477146603}
   borderRight: {fileID: 2092601126}
   spawnInterval: 3
-  minToSpawn: 0.001
+  minToSpawn: 0.01
   prefabObject: {fileID: 2834648250574578846, guid: e36792e4a9e3c504d8c7bef26bac23f7, type: 3}
   defaultElementsPool:
   - {fileID: 11400000, guid: 5592993f90794e44c8af7ac2b95ffda8, type: 2}

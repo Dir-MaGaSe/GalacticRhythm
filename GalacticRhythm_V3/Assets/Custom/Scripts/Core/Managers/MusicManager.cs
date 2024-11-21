@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
 
     [Range(0.01f, 0.5f)] public float sensitivity = 0.1f; // Sensibilidad para detectar picos
     [Range(0.01f, 0.1f)] [SerializeField] private float lowThreshold; // Umbral para detectar bajos
-    [Range(0.25f, 0.35f)] [SerializeField] private float highThreshold; // Umbral para detectar altos
+    [Range(0.15f, 0.25f)] [SerializeField] private float highThreshold; // Umbral para detectar altos
     
     void Update()
     {
